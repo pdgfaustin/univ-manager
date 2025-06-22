@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const env = require("./config/index");
-const db = require("./config/db");
+const {db} = require("./models");
 
 console.log("Démarrage du server ...");
 //IMPORTATIONS DES ROUTES

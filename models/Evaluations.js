@@ -1,30 +1,32 @@
 const DataTypes = require("sequelize");
 const db = require("../config/db");
 
-const CommanderDoc = db.define("CommanderDoc",{
-    idCD:{
+const Evaluations = db.define("Evaluations",{
+    idEva:{
         type:DataTypes.INTEGER,
         primaryKey:true,
         autoIncrement:true
     },
     matrEtud:{
-        type:DataTypes.STRING(10),
-
-    },
-    idDoc:{
         type:DataTypes.STRING(10)
     },
-    codOpt:{
+    matrEns:{
+        type:DataTypes.STRING(10)
+    },
+    codeSess:{
         type:DataTypes.STRING(10)
     },
     anneeAcad:{
         type:DataTypes.STRING(9)
     },
-    dateCmd:{
-        type:DataTypes.DATE
+    codeEC:{
+        type:DataTypes.STRING(10)
     },
-    etatCmd:{
-        type:DataTypes.STRING(40)
+    nodeObt:{
+        type:DataTypes.INTEGER
+    },
+    datEva : {
+        type:DataTypes.DATE
     }
 });
-module.exports=CommanderDoc;
+module.exports = Evaluations;
