@@ -4,7 +4,7 @@ console.log("🙇‍♀️ Initialisation de la connection mysql");;
 
 const db = new sequelize(env.DATABASE,env.USER,env.PASSWORD,{
     host : env.HOST,
-    dialect:env.DIALECT,
+    dialect:"mysql",
     port: env.PORT,
     login:false
 });
