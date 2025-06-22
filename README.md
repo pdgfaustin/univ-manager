@@ -25,3 +25,7 @@ Rôle : accès restreint selon le profil
 ## Délibération
 -	Calculs de passage
 -	Génération automatique du relevé et du procès-verbal
+## Commander un document académique
+- Faire une commande en payant soit en ligne ou en présentiel
+- Impression du document
+- Signature du secrétaire Général académique
