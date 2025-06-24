@@ -5,17 +5,29 @@ const {db} = require("./models");
 
 console.log("Démarrage du server ...");
 //IMPORTATIONS DES ROUTES
-
+const gradeRoutes = require("./routes/grade.route");
 
 //PORT
-const PORT = env.PORT || 3001;
+const PORT = env.PORT_SERVER
 
 
 //MIDDLEWARES
-
+app.use(express.json());
 
 //PREFIX
+app.use("/api/grade",gradeRoutes);  
+//Middleware de gestion d'Erreurs
+app.use((err,req,res,next)=>{
+    const status = err.status || 500;
+    const message = err.message || "Une erreur est survenue"
+    const details = err.details || null;
 
+    res.status(status).json({ error : {
+        status,
+        message,
+        details
+    }})
+});
 
 //SEVRER
 const startServer = async() => {
@@ -24,7 +36,7 @@ const startServer = async() => {
         console.log("✅ Connection à la BDD effective ");
         
         app.listen(PORT, ()=>{
-            console.log("Server démarré sur le PORT : " + PORT);
+            console.log("Server démarré sur http://localhost:" + PORT);
             
         });
     } catch (error) {

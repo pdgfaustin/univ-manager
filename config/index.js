@@ -3,6 +3,7 @@ dotenv.config();
 
 
 const ENV = {
+    PORT_SERVER : process.env.PORT_SERVER,
     PORT : process.env.PORT,
     HOST : process.env.HOST,
     USER : process.env.BD_USER,
