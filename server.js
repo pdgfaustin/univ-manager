@@ -6,7 +6,7 @@ const {db} = require("./models");
 console.log("Démarrage du server ...");
 //IMPORTATIONS DES ROUTES
 const gradeRoutes = require("./routes/grade.route");
-
+const docRoutes = require("./routes/docs.routes");
 //PORT
 const PORT = env.PORT_SERVER
 
@@ -16,6 +16,7 @@ app.use(express.json());
 
 //PREFIX
 app.use("/api/grade",gradeRoutes);  
+app.use("/api/document",docRoutes);
 //Middleware de gestion d'Erreurs
 app.use((err,req,res,next)=>{
     const status = err.status || 500;

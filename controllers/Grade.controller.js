@@ -39,7 +39,6 @@ exports.updateGrade = async(req,res,next)=>{
         const [updateRows] = await GradeEnseignant.update(req.body,{
             where: { codeGrade: req.params.id }
         });
-        console.log(req.body.libeGrade);
         if(updateRows === 0) return next(createError(404,"Elément à modifier introuvable"));
 
         const grade = await GradeEnseignant.findOne({where: {codeGrade : req.params.id}});
