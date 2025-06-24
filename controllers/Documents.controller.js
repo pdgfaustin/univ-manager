@@ -3,7 +3,6 @@ const createError = require("../middlewares/error");
 
 exports.CreateDoc = async(req,res,next)=>{
     try {
-        console.log(req.body.idDoc);
         const doc = await DocsAcademiques.create({
             idDoc:req.body.idDoc.toUpperCase(),
             libeDoc:req.body.libeDoc.toUpperCase()
