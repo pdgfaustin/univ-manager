@@ -17,7 +17,7 @@ const Enseignants = db.define("Enseignants",{
         type:DataTypes.STRING(20)
     },
     sexeEns:{
-        type:DataTypes.STRING(1)
+        type:DataTypes.STRING(10)
     },
     dateNaissEns:{
         type:DataTypes.DATE

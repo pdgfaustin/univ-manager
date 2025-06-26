@@ -6,7 +6,6 @@ const Etudiants = db.define("Etudiants",{
     idEt:{
         type:DataTypes.INTEGER,
         autoInrement:true,
-        
     },
     matrEtud:{
         type:DataTypes.STRING(10),

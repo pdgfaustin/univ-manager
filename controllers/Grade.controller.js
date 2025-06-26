@@ -12,7 +12,7 @@ exports.createGrade = async(req,res,next)=>{
         next(createError(500,"Erreur lors de la création de Grade ", error.message))
     }
 }
-exports.getAll = async(req,res,next)=>{
+exports.getAll = async(req, res, next) => {
     try {
         const grade = await GradeEnseignant.findAll();
         res.status(200).json(grade);
@@ -42,7 +42,7 @@ exports.updateGrade = async(req,res,next)=>{
         if(updateRows === 0) return next(createError(404,"Elément à modifier introuvable"));
 
         const grade = await GradeEnseignant.findOne({where: {codeGrade : req.params.id}});
-        return res.status(203).json(grade);
+        return res.status(200).json(grade);
     } catch (error) {
         next(createError(500,"Erreur lors de la modification de grade",error.message));
     }
