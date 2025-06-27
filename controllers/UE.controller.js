@@ -4,7 +4,12 @@ const createError = require("../middlewares/error");
 exports.createUE = async(req,res,next)=>{
     try {
         const ue = await UE.create(req.body);
-        res.status(201).json(ue);
+        let result = {
+            code:201,
+            message:"UE créer avec succès",
+            data:ue
+        }
+        res.status(201).json(result);
     } catch (error) {
         next(createError(500,"Erreur lors de la création de l'Unité d'Enseignement ", error.message))
     }
@@ -26,7 +31,12 @@ exports.findAllUE = async(req, res, next) => {
 exports.findUE = async(req, res, next) =>{
     try {
         const ue = await UE.findByPk(req.params.id);
-        res.status(200).json(ue);
+        let result = {
+            code:200,
+            message:"UE trouvé",
+            data:ue
+        }
+        res.status(200).json(result);
     } catch (error) {
         next(createError(500,error.message))
     }
@@ -56,6 +66,11 @@ exports.updateUE = async(req, res, next) => {
 exports.deleteUE = async(req, res, next) =>{
     try {
         const del = await UE.destroy({where : {codeUE : req.params.id}});
+        let donnee = {
+            code:200,
+            message:"UE Supprimé"
+        }
+        res.status(200).json(donnee);
     } catch (error) {
         next(createError(500,error.message));
     }

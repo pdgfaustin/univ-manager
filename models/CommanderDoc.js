@@ -14,7 +14,7 @@ const CommanderDoc = db.define("CommanderDoc",{
     idDoc:{
         type:DataTypes.STRING(10)
     },
-    codOpt:{
+    codeOpt:{
         type:DataTypes.STRING(10)
     },
     anneeAcad:{
@@ -24,7 +24,8 @@ const CommanderDoc = db.define("CommanderDoc",{
         type:DataTypes.DATE
     },
     etatCmd:{
-        type:DataTypes.STRING(40)
+        type:DataTypes.STRING(40),
+        default:"En cours ..."
     }
 });
 module.exports=CommanderDoc;

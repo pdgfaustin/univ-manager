@@ -15,6 +15,13 @@ const ueRoutes = require("./routes/UE.routes");
 const optsRoutes = require("./routes/Options.routes");
 const promoRoutes = require("./routes/Promotions.routes");
 const sessionRoutes = require("./routes/Sessions.routes");
+const cmdDocsRoutes = require("./routes/CommanderDocs.routes");
+const ecRoutes = require("./routes/EC.routes");
+const avoirRoutes = require("./routes/AvoirGrade.routes");
+const pgcRoutes = require("./routes/ProgrammerCours.routes");
+const payerRoutes = require("./routes/PayerFrais.routes");
+const inscritRoutes = require("./routes/Inscriptions.routes");
+const evaRoutes = require("./routes/Evaluation.routes");
 //PORT
 const PORT = env.PORT_SERVER
 
@@ -32,7 +39,14 @@ app.use("/api/frais",fraisRoutes);
 app.use("/api/opts",optsRoutes);
 app.use("/api/promotions",promoRoutes);
 app.use("/api/sessions",sessionRoutes);
-app.use("/api/ues",ueRoutes)
+app.use("/api/ues",ueRoutes);
+app.use("/api/commander_doc",cmdDocsRoutes);
+app.use("/api/ecs",ecRoutes);
+app.use("/api/grade-agent", avoirRoutes);
+app.use("/api/programmer",pgcRoutes);
+app.use("/api/payer-frais",payerRoutes);
+app.use("/api/inscriptions",inscritRoutes);
+app.use("/api/evaluations",evaRoutes);
 //Middleware de gestion d'Erreurs
 app.use((err,req,res,next)=>{
     const status = err.status || 500;
